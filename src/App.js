@@ -11,6 +11,7 @@ function App() {
       <Navbar  color = "dark">
         <div className = "container">
           <NavbarBrand href = "https://github.com/biswa7064/coursera-react-app">Welcome to my github account</NavbarBrand>
+          <NavbarBrand href = "/">React config</NavbarBrand>
         </div>
       </Navbar>
       
