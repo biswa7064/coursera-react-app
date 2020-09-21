@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 
+
 //adding navigation bar
 import {Navbar, NavbarBrand} from 'reactstrap';
+
+import Menu from './components/MenuComponent';
 import './App.css';
 
 function App() {
@@ -11,9 +14,11 @@ function App() {
       <Navbar  color = "dark">
         <div className = "container">
           <NavbarBrand href = "https://github.com/biswa7064/coursera-react-app">Welcome to my github account</NavbarBrand>
-          <NavbarBrand href = "/">React config</NavbarBrand>
+          <NavbarBrand href = "/" >React config</NavbarBrand>
+          
         </div>
       </Navbar>
+      <Menu/>
       
     </div>
   );
