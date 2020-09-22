@@ -7,6 +7,11 @@ class Menu extends Component{
         this.state = {
             selectedDish : null
         }
+        console.log("constructor method invoked");
+        }
+
+        componentDidMount(){
+            console.log("componentDidMount method invoked");
         }
 
         //change state of selectedDish
@@ -54,6 +59,8 @@ class Menu extends Component{
                 </div>
             )
         });
+
+        console.log("render method invoked");
 
         return(
             <div className = "container">
