@@ -1,23 +1,23 @@
 import React, {Component} from 'react';
-//import logo from './logo.svg';
+
 
 
 //adding navigation bar
 import {Navbar, NavbarBrand} from 'reactstrap';
 
-import Menu from './components/MenuComponent';
-import './App.css';
-import {DISHES} from "./shared/dishes";
+import Menu from './MenuComponent';
+
+import {DISHES} from "../shared/dishes";
 //import {dishDetails} from "./shared/comments";
 import DishDetail from './components/DishdetailComponent';
 
-class App extends Component {
+class Main extends Component {
 
   constructor(props){
     super(props);
     this.state = {
       dishes : DISHES,
-      
+      selectedDish : null
     };
   }
   render(){
@@ -43,5 +43,5 @@ class App extends Component {
 }
 
 export default App;
-//<DishDetail dishes = {this.state.dishes}/>
+
 
