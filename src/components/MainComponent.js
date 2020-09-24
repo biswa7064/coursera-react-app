@@ -9,7 +9,7 @@ import Menu from './MenuComponent';
 
 import {DISHES} from "../shared/dishes";
 //import {dishDetails} from "./shared/comments";
-import DishDetail from './components/DishdetailComponent';
+import DishDetail from './DishdetailComponent';
 
 class Main extends Component {
 
@@ -20,20 +20,24 @@ class Main extends Component {
       selectedDish : null
     };
   }
+
+  onDishSelect(dishId){
+      this.setState({selectedDish:dishId});
+  }
+
   render(){
   return (
-    <div className="App">
+    <div className="Main">
       <Navbar  color = "dark">
         <div className = "container">
           <NavbarBrand href = "https://github.com/biswa7064/coursera-react-app">Welcome to my github account</NavbarBrand>
-          <NavbarBrand href = "https://www.pexels.com/search/black%20wallpaper/" >wallpaper</NavbarBrand>
-          
+                   
         </div>
       </Navbar>
       <div className = "bodyPart" style = {{backgroundColor:"black",color:"white"}}>
       
-      <Menu dishes = {this.state.dishes}/>
-      <DishDetail dishes ={this.state.dishes.comments}/>
+      <Menu dishes = {this.state.dishes} onClick = {(dishId)=>this.onDishSelect(dishId)}/>
+      <DishDetail dish ={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]}/>
       </div>
       
       
@@ -42,6 +46,6 @@ class Main extends Component {
   }
 }
 
-export default App;
+export default Main;
 
 
