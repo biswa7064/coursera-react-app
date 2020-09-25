@@ -10,6 +10,8 @@ import Menu from './MenuComponent';
 import {DISHES} from "../shared/dishes";
 //import {dishDetails} from "./shared/comments";
 import DishDetail from './DishdetailComponent';
+import Header from "./HeaderComponent.js";
+import Footer from "./FooterComponent";
 
 class Main extends Component {
 
@@ -30,9 +32,10 @@ class Main extends Component {
     <div className="Main">
       
       <div className = "bodyPart" style = {{backgroundColor:"black",color:"white"}}>
-      
+      <Header/>
       <Menu dishes = {this.state.dishes} onClick = {(dishId)=>this.onDishSelect(dishId)}/>
       <DishDetail dish ={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]}/>
+      <Footer/>
       </div>
       
       
