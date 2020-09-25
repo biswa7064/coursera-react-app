@@ -6,10 +6,20 @@ class Header extends Component{
     render(){
         return(
             <React.Fragment>
-                <Navbar  color = "dark">
-                    <div className = "container">
-                        <NavbarBrand href = "https://github.com/biswa7064/coursera-react-app">Welcome to my github account</NavbarBrand>
-                                
+                <Navbar  color = "dark"> 
+                              
+                    <div className = "container"> 
+                    {/* Adding github link in both style*/} 
+                    
+                                                           
+                    {/* <a class="btn btn-social-icon btn-github">                        
+                        <span class="fa fa-github"></span>                     
+                    </a>                                 */}
+
+
+                    <a href= "https://github.com/biswa7064/coursera-react-app" style = {{textDecoration :'none'}}>Github <i class = "fa fa-github" style = {{fontSize:'30px'}}></i></a>
+
+                    
                     </div>
                 </Navbar>
             
