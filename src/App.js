@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 //import logo from './logo.svg';
-import Menu from './components/MenuComponent';
+//import Menu from './components/MenuComponent';
 import './App.css';
 import {DISHES} from "./shared/dishes";
 //import {dishDetails} from "./shared/comments";
 //import DishDetail from './components/DishdetailComponent';
 import Main from './components/MainComponent';
+import {BrowserRouter} from "react-router-dom";
 
 class App extends Component {
 
@@ -18,17 +19,14 @@ class App extends Component {
   }
   render(){
   return (
-    <div className="App">
-      
-      
+    <BrowserRouter>
+    <div className="App">      
       <div className = "bodyPart" style = {{backgroundColor:"black",color:"white"}}>
       
-      <Main />
-      
-      </div>
-      
-      
+      <Main />      
+      </div>     
     </div>
+    </BrowserRouter>
   );
   }
 }
