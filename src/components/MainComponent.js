@@ -53,7 +53,7 @@ class Main extends Component {
   return (
     <div className="Main">
       
-      <div className = "bodyPart" style = {{backgroundColor:"black",color:"white"}}>
+      <div className = "bodyPart">
       <Header/>
       <Switch>
         <Route path = "/home" component = {HomePage}/>

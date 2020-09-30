@@ -21,7 +21,7 @@ class App extends Component {
   return (
     <BrowserRouter>
     <div className="App">      
-      <div className = "bodyPart" style = {{backgroundColor:"black",color:"white"}}>
+      <div className = "bodyPart">
       
       <Main />      
       </div>     
