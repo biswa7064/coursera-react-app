@@ -19,7 +19,7 @@ const About = (props)=> {
                     <Media top left>
                         <Media object src = {leader.image}/>
                     </Media>
-                    <Media body>
+                    <Media body style = {{color:"black"}}>
                         <Media heading>
                         {leader.name}
                         </Media>
@@ -109,7 +109,7 @@ const About = (props)=> {
                 <div className="col-12" >
                     <Media list >
                         {/* {leaders} */}
-                        <RenderLeader leaderDetails = {props.leaders}/>
+                        <RenderLeader  leaderDetails = {props.leaders}/>
                     </Media>
                     
                 </div>
