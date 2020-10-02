@@ -16,11 +16,9 @@ class Contact extends Component{
     
     handleOnSubmit(values){
         console.log("Current state is : "+JSON.stringify(values));
-        alert("Current state is : "+JSON.stringify(values));
-        
+        alert("Current state is : "+JSON.stringify(values));        
     }
-    render(){
-        
+    render(){        
     return(
         <div className="container">
              <div className="row">
