@@ -17,7 +17,7 @@ const mapStateToProps = (state)=>{
     return{
       dishes:state.dishes,
       comments:state.comments,
-      promotion:state.promotions,
+      promotions:state.promotions,
       leaders:state.leaders
     }
 }
