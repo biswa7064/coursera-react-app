@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import CommentForm from "./CommentFormComponent"
  
 
 import  {Card,CardImg,CardBody,CardText,CardTitle,Breadcrumb, BreadcrumbItem} from "reactstrap";
@@ -54,6 +55,7 @@ import { Link } from 'react-router-dom';
                    
                     <ul className="list-unstyled">
                     {commentsList}
+                    <CommentForm />
                     </ul> 
                     </CardText>
                     </CardBody>
