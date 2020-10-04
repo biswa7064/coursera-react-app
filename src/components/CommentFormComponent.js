@@ -43,7 +43,8 @@ class CommentForm extends Component{
                             <Row className = "form-group ">                                
                             <Col md={10}>
                                     <Control.select model =".rating"name="rating"
-                                       className = "form-control ">                                       
+                                       className = "form-control "> 
+                                        <option>Choose</option>                                      
                                         <option>1</option>                                        
                                         <option>2</option>
                                         <option>3</option>
