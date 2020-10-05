@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import {Button,Label,Modal,ModalBody,ModalHeader,Row,Col} from "reactstrap";
 import { Control, LocalForm, Errors } from "react-redux-form";
 
+
 const required = (val)=> val && val.length;
 const maxLength = (len)=>(val)=> !(val) || (val.length <= len);
 const minLength = (len)=>(val)=> val && (val.length >= len);
@@ -25,8 +26,7 @@ class CommentForm extends Component{
     }
 
     handleSubmit(values){
-        
-        alert("Your data is : "+JSON.stringify(values));
+       this.props.addComment(this.props.dishId, values.rating, values.author,values.comment);
     }
 
     render(){
@@ -53,16 +53,16 @@ class CommentForm extends Component{
                                     </Control.select>
                                 </Col>
                             </Row>
-                            <Label htmlFor="name" md={10}>Your Name</Label>
+                            <Label htmlFor="author" md={10}>Your Name</Label>
                             <Row className = "form-group">
                                 
                                 <Col md={10}>
-                                    <Control.text model =".name" id="name" name="name"
+                                    <Control.text model =".author" id="author" name="author"
                                         placeholder="Your Name"
                                         className = "form-control" 
                                         validators = {{ required, maxLength:maxLength(15), minLength:minLength(3) }} />
                                         <Errors
-                                      model= '.name'
+                                      model= '.author'
                                       className = "text-danger"
                                       show = "touched"
                                       messages = {{
@@ -78,11 +78,11 @@ class CommentForm extends Component{
                               
                             
                                 
-                            <Label htmlFor="message" md={10}>Comment</Label>   
+                            <Label htmlFor="comment" md={10}>Comment</Label>   
                             <Row className = "form-group">
                                 
                                 <Col md={10}>
-                                    <Control.textarea model =".message" id="message" name="message"
+                                    <Control.textarea model =".comment" id="comment" name="comment"
                                         rows="6"
                                        className = "form-control"/>
                                 </Col>

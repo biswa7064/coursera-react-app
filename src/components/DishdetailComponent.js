@@ -35,7 +35,7 @@ import { Link } from 'react-router-dom';
 
     
     
-     function RenderComments({comments}) {
+     function RenderComments({comments,addComment,dishId}) {
         const commentsList = comments.map((comment) => {
           return (
             <li key={comment.id}>
@@ -55,7 +55,7 @@ import { Link } from 'react-router-dom';
                    
                     <ul className="list-unstyled">
                     {commentsList}
-                    <CommentForm />
+                    <CommentForm dishId = {dishId} addComment = {addComment} />
                     </ul> 
                     </CardText>
                     </CardBody>
@@ -96,7 +96,9 @@ import { Link } from 'react-router-dom';
               <RenderDish dish ={props.dish} />
               </div>          
             <div className = "col-12 col-md-5 lm-1">                         
-            <RenderComments comments = {props.comments}/>
+            <RenderComments comments = {props.comments}
+             addComment = {props.addComment} 
+             dishId = {props.dish.id}/>
             </div>
             </div>
         </div>
