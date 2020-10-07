@@ -13,5 +13,5 @@ import * as ActionTypes from "./ActionTypes"
         default:
             return state;
     }
-}
+};
 
