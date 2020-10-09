@@ -13,7 +13,8 @@ import { Loading } from './LoadingComponent';
             return(
                     <h4>{errMess}</h4>
             );
-        }else
+        } 
+        else       
         return(
         <Card>
             <CardImg src={item.image} alt={item.name} />
@@ -26,18 +27,20 @@ import { Loading } from './LoadingComponent';
         );
     }
 
+
+
 function Home(props){
     return(
     <div className="container" >
         <div className="row align-items-start">
             <div className="col-12 col-md m-1">
-                <RenderCard item={props.dish} />
+                <RenderCard item={props.dish} isLoading = {props.dishesLoading} errMess = {props.dishesErrMess} />
             </div>
             <div className="col-12 col-md m-1">
                 <RenderCard item={props.promotion} />
             </div>
             <div className="col-12 col-md m-1">
-                <RenderCard item={props.leader} isLoading = {props.dishesLoading} errMess = {props.dishesErrMess} />
+                <RenderCard item={props.leader}  />
             </div>
         </div>
     </div>

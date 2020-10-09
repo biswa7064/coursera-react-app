@@ -10,12 +10,7 @@ export const addComment = (dishId,rating,author,comment)=>({
     }
 });
 
-export const fetchDishes = () =>(dispatch)=>{
-    dispatch(dishesLoading(true));
-    setTimeout(()=>{
-        dispatch(addDishes(DISHES))
-    },2000);
-}
+
 
 export const dishesLoading = () => ({
     type: ActionTypes.Dishes_Loading
@@ -30,3 +25,13 @@ export const addDishes = (dishes) => ({
     type: ActionTypes.Add_Dishes,
     payload: dishes
 });
+
+export const fetchDishes = () =>(dispatch)=>{
+    dispatch(dishesLoading(true));
+    setTimeout(()=>{
+        dispatch(addDishes(DISHES))
+    },2000);
+}
+
+
+
