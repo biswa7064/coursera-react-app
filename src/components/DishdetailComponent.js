@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import CommentForm from "./CommentFormComponent";
 import { Loading } from "./LoadingComponent";
- 
+import {baseUrl} from "../shared/baseUrl";
 
 import  {Card,CardImg,CardBody,CardText,CardTitle,Breadcrumb, BreadcrumbItem} from "reactstrap";
 import { Link } from 'react-router-dom';
@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
             return( 
                 
                     <Card>
-                <CardImg width = "100%" src = {dish.image} alt = {dish.name}/>
+                <CardImg width = "100%" src = { baseUrl + dish.image} alt = {dish.name}/>
                 <CardBody>
                 <CardTitle style = {{color:"darkslateblue", fontWeight:"bold", fontSize:"30px"}}>
                         {dish.name}

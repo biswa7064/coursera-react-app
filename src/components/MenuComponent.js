@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import  {Card,CardImg,CardImgOverlay,CardTitle,Breadcrumb,BreadcrumbItem} from "reactstrap";
 
 //import DishDetail from "./DishdetailComponent";
+import {baseUrl} from "../shared/baseUrl";
 import {Link} from "react-router-dom";
 import { Loading } from './LoadingComponent';
 function RenderMenuItem({dish}){
@@ -10,7 +11,7 @@ function RenderMenuItem({dish}){
             
             <Card > 
                 <Link to = {`menu/${dish.id}`}>                      
-                    <CardImg width = "100%" src = {dish.image} alt = {dish.name}/>
+                    <CardImg width = "100%" src = { baseUrl + dish.image} alt = {dish.name}/>
                     
                     <CardImgOverlay>
                         <CardTitle style = {{color:"darkslateblue", fontWeight:"bold", fontSize:"30px"}}>
@@ -38,7 +39,7 @@ const Menu = (props)=>{
     });
 
 
-    console.log("render method invoked");
+   
     if (props.dishes.isLoading) {
         return(
             <div className="container">
