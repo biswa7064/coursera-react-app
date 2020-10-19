@@ -5,14 +5,18 @@ import {baseUrl} from "../shared/baseUrl";
 
 import  {Card,CardImg,CardBody,CardText,CardTitle,Breadcrumb, BreadcrumbItem} from "reactstrap";
 import { Link } from 'react-router-dom';
-
+import { FadeTransform, Fade, Stagger } from 'react-animation-components'
 
     
     function RenderDish({dish}){
         if(dish != null){
             return( 
-                
-                    <Card>
+        <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>   
+            <Card>
                 <CardImg width = "100%" src = { baseUrl + dish.image} alt = {dish.name}/>
                 <CardBody>
                 <CardTitle style = {{color:"darkslateblue", fontWeight:"bold", fontSize:"30px"}}>
@@ -22,9 +26,9 @@ import { Link } from 'react-router-dom';
                 <CardText style = {{color:"blue"}}>{dish.description}</CardText>  
                     
                 </CardBody>
-                </Card>
+            </Card>
 
-                     
+        </FadeTransform>            
             );
 
         }else{
@@ -37,15 +41,19 @@ import { Link } from 'react-router-dom';
     
     
      function RenderComments({comments,postComment,dishId}) {
-        const commentsList = comments.map((comment) => {
+        const commentsList = 
+        comments.map((comment) => {
           return (
+        <Fade in>
             <li key={comment.id}>
               <p>{comment.commentDescription}</p>
               <p>-- {comment.author} <br></br>
                {comment.date}</p>
             </li>
+        </Fade>
           );
         });
+    
 
         if(comments != null){
             return(
