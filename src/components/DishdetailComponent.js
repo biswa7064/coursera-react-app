@@ -5,7 +5,7 @@ import {baseUrl} from "../shared/baseUrl";
 
 import  {Card,CardImg,CardBody,CardText,CardTitle,Breadcrumb, BreadcrumbItem} from "reactstrap";
 import { Link } from 'react-router-dom';
-import { FadeTransform, Fade, Stagger } from 'react-animation-components'
+import { FadeTransform, Fade } from 'react-animation-components'
 
     
     function RenderDish({dish}){

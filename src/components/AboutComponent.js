@@ -1,23 +1,28 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { baseUrl } from "../shared/baseUrl";
+import { Fade,Stagger } from "react-animation-components";
 
 const About = (props)=> {
 
-    const leaders = props.leaders.map((leader) => {
+    const leaders = props.leaders.leaders.map((leader) => {
         return (
             <p>Leader {leader.name}</p>
         );
     });
 
     function RenderLeader({leaderDetails}){
-        const details = props.leaders.map((leader)=>{
+        const details = props.leaders.leaders.map((leader)=>{
+            
         return(
             <div className = "row" >
                 <div className = "col-12" key = {leader.id}>
+                <Stagger in>
+                    <Fade>
                     <Media>
                     <Media top left>
-                        <Media object src = {leader.image}/>
+                        <Media object src = {baseUrl + leader.image}/>
                     </Media>
                     <Media body style = {{color:"black"}}>
                         <Media heading>
@@ -32,7 +37,8 @@ const About = (props)=> {
                         
                     </Media>
                     </Media>
-                
+                    </Fade>
+                   </Stagger> 
                 </div>
             </div>
         );
@@ -40,9 +46,13 @@ const About = (props)=> {
 
     if(leaderDetails!=null){
         return(
-            <div style = {{color:"white"}}>
-                {details}
+            
+            <div style = {{color:"white"}}> 
+                               
+                {details}            
             </div>
+            
+            
         )
     }else{
         return(
@@ -107,10 +117,12 @@ const About = (props)=> {
                     <h2>Corporate Leadership</h2>
                 </div>
                 <div className="col-12" >
+                    
                     <Media list >
                         {/* {leaders} */}
                         <RenderLeader  leaderDetails = {props.leaders}/>
                     </Media>
+                    
                     
                 </div>
             </div>

@@ -10,5 +10,11 @@ export const Promos_Loading = "Promos_Loading";
 export const Promos_Failed = "Promos_Failed";
 export const Add_Promos = "Add_Promos";
 
+export const Add_Leaders = "Add_Leaders";
+export const Leaders_Loading = "Leaders_Loading";
+export const Leaders_Failed = "Leaders_Failed";
+
+
+
 
 
